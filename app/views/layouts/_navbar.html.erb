@@ -16,7 +16,7 @@
           <li><a class="hover:text-gray-200" href="/">Home</a></li>
           <% if current_user %>
             <li><a class="hover:text-gray-200" href="#">  <%= link_to "Upload", new_post_path %></a></li>
-            <li><a class="hover:text-gray-200" href="#">  My Media</a></li>
+            <li><a class="hover:text-gray-200" href="#">  <%= link_to "My Media", pages_media_path %></a></li>
             <li> <a class="hover:text-gray-200">Profile</a></li>
             <li>Log out</li>
         <% else %>
