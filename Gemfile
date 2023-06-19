@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem "punching_bag", "~> 0.7.0"
