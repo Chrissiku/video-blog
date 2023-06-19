@@ -5,19 +5,24 @@
 <div class="flex-wrap place-items-center">
   <section class="relative mx-auto">
     <!-- navbar -->
-    <nav class="flex justify-between text-white " style="background-color: #282828;    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+    <nav class="flex justify-between text-white " style="background-color: #282828; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
       <div class="flex items-center w-full px-5 py-6 xl:px-12">
         <a class="text-3xl font-bold font-heading" href="/">
           Video Blog
         </a>
         <!-- Nav Links -->
         <ul class="hidden px-4 mx-auto space-x-12 font-semibold md:flex font-heading">
-          <li><a class="hover:text-gray-200" href="/">Home</a></li>   
-            <li><a class="hover:text-gray-200" href="#">Upload</a></li>
-            <li><a class="hover:text-gray-200">My Media</a></li>
-          <li><a class="hover:text-gray-200" href="#">Log Out</a></li>
+          <li><a class="hover:text-gray-200" href="/">Home</a></li>
+          <% if current_user %>
+            <li><a class="hover:text-gray-200" href="#">  <%= link_to "Upload", new_post_path %></a></li>
+            <li><a class="hover:text-gray-200" href="#">  My Media</a></li>
+            <li> <a class="hover:text-gray-200">Profile</a></li>
+            <li>Log out</li>
+        <% else %>
+          <li><a class="hover:text-gray-200" href="#">  <%= link_to "Sign up", new_user_registration_path %></a></li>
         </ul>
-
+      <% end %>
       <!-- Header Icons -->
     </div>
     <!-- Responsive navbar -->
